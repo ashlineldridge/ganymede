@@ -1,1 +1,1 @@
-include 'training-program-services', 'training-program-client'
+include 'services', 'web-client'

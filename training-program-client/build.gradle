@@ -1,3 +1,0 @@
-apply plugin: 'jetty'
-
-description = 'Frontend client web application.'

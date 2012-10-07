@@ -15,8 +15,8 @@ allprojects {
 }
 
 dependencies {
-    compile project(':training-program-services')
-    compile project(':training-program-client')
+    compile project(':services')
+    compile project(':web-client')
 }
 
 jar {

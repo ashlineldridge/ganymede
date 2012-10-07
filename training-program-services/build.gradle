@@ -1,3 +1,0 @@
-apply plugin: 'jetty'
-
-description = 'Backend services for the application exposed via a RESTful interface.'
