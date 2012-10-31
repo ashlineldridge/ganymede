@@ -2,11 +2,14 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
     
-    group = 'com.asdf.abc'
+    group = 'com.ganymede'
     version = '0.0.1-SNAPSHOT'
 
     repositories {
         mavenCentral()
+        maven {
+            url 'http://repository.jboss.org/nexus/content/groups/public/'
+        }
     }
 
     dependencies {
