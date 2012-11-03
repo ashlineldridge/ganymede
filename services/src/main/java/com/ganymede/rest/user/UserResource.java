@@ -1,9 +1,10 @@
-package com.ganymede.rest;
+package com.ganymede.rest.user;
 
 import com.ganymede.facade.user.UserFacade;
 import com.ganymede.facade.user.dto.UserDTO;
 import org.jboss.resteasy.links.AddLinks;
 import org.jboss.resteasy.links.LinkResource;
+import org.springframework.stereotype.Controller;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 /**
  *
  */
-@Named // or @Service?
+@Controller
 @Path("/users")
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 public class UserResource {
@@ -29,6 +30,8 @@ public class UserResource {
     @AddLinks
     @LinkResource
     public UserDTO getUser(@PathParam("id") Long id) {
+        int i = 5;
+        System.out.println("" + i);
         return userFacade.getUserById(id);
     }
 }

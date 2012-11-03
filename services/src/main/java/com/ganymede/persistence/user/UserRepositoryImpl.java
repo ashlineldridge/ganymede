@@ -1,4 +1,4 @@
-package com.ganymede.persistence;
+package com.ganymede.persistence.user;
 
 import com.ganymede.domain.user.User;
 import com.ganymede.domain.user.UserRepository;

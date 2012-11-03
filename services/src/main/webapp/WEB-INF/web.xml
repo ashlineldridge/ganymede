@@ -5,37 +5,23 @@
 <web-app>
     <display-name>RESTEasy Prototype Web Application</display-name>
 
-    <!-- Tell Spring where the application context XML file is -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:/spring/applicationContext.xml</param-value>
     </context-param>
 
-    <!-- This needs to be used if the RESTEasy servlet is mapped to something other than /* -->
-    <context-param>
-        <param-name>resteasy.servlet.mapping.prefix</param-name>
-        <param-value>/services</param-value>
-    </context-param>
-
-    <!-- RESTEasy configuration -->
     <listener>
-        <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <!-- RESTEasy <-> Spring connector (so that RESTEasy resources can access Spring beans) -->
-    <listener>
-        <listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
-    </listener>
-
-    <!-- RESTEasy HTTP Request processor -->
     <servlet>
-        <servlet-name>Resteasy</servlet-name>
-        <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- RESTEasy servlet mapping -->
     <servlet-mapping>
-        <servlet-name>Resteasy</servlet-name>
-        <url-pattern>/services/*</url-pattern>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 </web-app>
