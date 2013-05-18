@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.*;
 public class UserDTO {
 
     @XmlElementRef
-    private RESTServiceDiscovery rest;
+    private RESTServiceDiscovery links;
 
     @ResourceID
     @XmlTransient

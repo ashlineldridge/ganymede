@@ -1,7 +1,7 @@
-package com.ganymede.rest.user;
+package com.ganymede.rest.workout;
 
-import com.ganymede.facade.user.UserFacade;
-import com.ganymede.facade.user.dto.UserDTO;
+import com.ganymede.facade.workout.WorkoutFacade;
+import com.ganymede.facade.workout.dto.WorkoutDTO;
 import org.jboss.resteasy.links.AddLinks;
 import org.jboss.resteasy.links.LinkResource;
 import org.springframework.stereotype.Controller;
@@ -17,18 +17,18 @@ import javax.ws.rs.core.MediaType;
  *
  */
 @Controller
-@Path("/users")
+@Path("/workouts")
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-public class UserResource {
+public class WorkoutResource {
 
     @Inject
-    private UserFacade userFacade;
+    private WorkoutFacade workoutFacade;
 
     @GET
     @Path("{id}")
     @AddLinks
     @LinkResource
-    public UserDTO getUser(@PathParam("id") Long id) {
-        return userFacade.findById(id);
+    public WorkoutDTO getWorkout(@PathParam("id") Long id) {
+        return workoutFacade.findById(id);
     }
 }

@@ -12,5 +12,5 @@ public interface UserFacade {
      * @param id
      * @return
      */
-    UserDTO getUserById(Long id);
+    UserDTO findById(Long id);
 }

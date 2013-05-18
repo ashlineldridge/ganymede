@@ -1,4 +1,4 @@
 GANYMEDE
 ========
 
-Web application for creating and recording sports training programs.
+Reference web application architure using principles from DDD.

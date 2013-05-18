@@ -2,7 +2,7 @@ package com.ganymede.facade.user;
 
 import com.ganymede.domain.user.User;
 import com.ganymede.domain.user.UserRepository;
-import com.ganymede.facade.transform.SimpleTransformFactory;
+import com.ganymede.facade.transform.FacadeTransform;
 import com.ganymede.facade.user.dto.UserDTO;
 import org.springframework.stereotype.Service;
 
@@ -18,14 +18,14 @@ public class UserFacadeImpl implements UserFacade {
     private UserRepository userRepository;
 
     @Inject
-    private SimpleTransformFactory transformFactory;
+    private FacadeTransform facadeTransform;
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public UserDTO getUserById(Long id) {
-        User user = userRepository.findUserById(id);
-        return transformFactory.get(User.class, UserDTO.class).apply(user);
+    public UserDTO findById(Long id) {
+        User user = userRepository.findById(id);
+        return facadeTransform.transform(user, UserDTO.class);
     }
 }
