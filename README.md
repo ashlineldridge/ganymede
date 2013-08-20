@@ -1,4 +1,4 @@
 GANYMEDE
 ========
 
-Reference web application architure using principles from DDD.
+Reference web application architecture using principles from Domain Driven Design.
